@@ -1,9 +1,5 @@
-To run program, enter the 'files' directory and type 'make' in the command line.
-This should create a binary executable called 'game'. Run it using './game'.
-The program should then prompt you to enter the filename corresponding to the
-text file with the graph you want to test (remember to make sure that the file 
-you give to the program is in the 'files' directory). Some sample test files 
-should already be in the directory for you to use.
+This program uses a minimax algorithm to determine if a given game state is winnable by the player who makes the first move, assuming both players make the best possible moves provided to them. The game in question involves an undirected graph of nodes connected by edges. Each player takes turns coloring a single node a color unique to them (typically red and blue), and a player loses if they color two connected nodes the same color (whether they choose to or are forced to), at which point the other player wins. This program accepts a game state in the form of a graph (proper formatting can be found in the sample test files) and outputs whether the given game state is winnable, will ultimately end in a tie, or is unwinnable. It also outputs which node should be colored first if a win or tie is possible.
 
-Also keep in mind that the program assumes that you are player 1, meaning
-that you are assumed to make the first move.
+To run the program, enter the 'files' directory and type 'make' in the command line. This should create a binary executable called 'game'. Run it using './game'. The program should then prompt you to enter the filename corresponding to the text file with the graph you want to test (remember to make sure that the file you give to the program is in the 'files' directory). Some sample test files should already be in the directory for you to use.
+
+Also keep in mind that the program assumes that you are player 1, meaning that you are assumed to make the first move.
