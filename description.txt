@@ -1,0 +1,29 @@
+Game States: The program uses a manually-defined graph class to represent the states.
+The class includes a vector of nodes and each node has a corresponding ID. This ID is an
+integer value that has a value between 0 and N-1 (where N is the total number of nodes in
+graph). This ID value is important because it is used as an index for the adjacency list
+(which is a vector containing lists of nodes) and the node colors (which is a vector of
+strings). Possible game states are:
+
+	nodes = { 1, 2, 3 }
+	adjList = { {2}, {1,3}, NULL }
+	colors = { BLUE, RED, RED }
+	(This state is a loss for red)
+
+	nodes = { 1, 2 }
+	adjList = { {2}, {1} }
+	colors = { BLUE, RED }
+	(This state is considered a tie)
+
+Player Function: The program decides whose turn it is by simply passing a boolean variable
+between functions. TRUE means it is RED's turn and FALSE means it is BLUE's turn.
+
+Result Function: The result function calls a minimaxValue function which then recursively calls
+itself until every state reaches a failure or terminal state. Then it checks if any moves result
+in a value of 1 (victory) or a value of 0 (tie).
+
+Termination Test: The function terminates when a terminal state is reached, which is whenever all
+nodes are colored or two adjacent nodes are the same color.
+
+Utility Function: The utility function checks if a state results in a loss and then attributes a win
+to whoever's turn it was last.
